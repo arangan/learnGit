@@ -65,6 +65,16 @@ UNDO PUSHED MERGE
 $ git revert -m 1 Commit_hash_SHA    -- To undo a merge that was already pushed:
 
 
+UNDO A COMMIT AND REDO
+------------------------
+
+$ git commit -m "Something terribly misguided"              (1)
+$ git reset HEAD~                                           (2)
+<< edit files as necessary >>                               (3)
+$ git add ...                                               (4)
+$ git commit -c ORIG_HEAD                                   (5)
+
+
 File DIFF and MERGE
 ---------------
 $ git diff   or $ git difftool
