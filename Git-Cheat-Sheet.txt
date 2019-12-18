@@ -91,6 +91,10 @@ $ git log --graph --oneline --decorate --all
 -- or
 $ git log --graph --abbrev-commit --decorate --date=relative --all
 
+FIND
+------------
+git log --follow -- [filename]       ## This will show the list of commits where this file was changed.
+git rev-parse --abbrev-ref HEAD     ## Return Current branch name
 
 CONFIG
 -------
