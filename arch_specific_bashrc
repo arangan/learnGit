@@ -1,0 +1,29 @@
+#without pacman-color
+alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'                                                                   
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'                                                                    
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'                                                                       
+alias pac='su -c "pacman -S"'                                                                                                                                
+alias pacclean='su -c "pacman -Scc"'                                                                                                                         
+alias pacinstalled='pacman -Q|grep '                                                                                                                         
+alias pacremove='su -c "pacman -Rsu "'                                                                                                                       
+alias pacsearch='pacman -Sl | grep '
+alias pacup='su -c "pacman -Syu"'
+
+# Lets you search through all available packages simply using 'pacsearch packagename'
+alias pacsearch="pacman-color -Sl | grep "
+
+# sudo pacman -Syu by typing pacup (sudo must be installed and configured first)
+alias pacup="sudo pacman-color -Syu"
+
+# sudo pacman -S by typing pac
+alias pac="sudo pacman-color -S"
+
+alias pacinstalled="pacman-color -Q|grep "
+
+alias pacclean="sudo pacman-color -Scc"
+alias pacremove='sudo pacman-color -Rsu '
+#Best - without host prompt
+#PS1='\[\e[32;1m\][\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[32;1m\]]\[\e[m\]\$ \[\e[1;37m\]' 
+
+#Best - with host
+PS1='\[\e[32;1m\][\u\[\e[m\]\[\e[37;1m\]@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[32;1m\]]\[\e[m\]\$ \[\e[1;37m\]'
