@@ -1,0 +1,51 @@
+### Skeleton .bashrc is in  /usr/share/skel/dot.bashrc -- create it if not there
+
+##### Add this in the .profile #####
+#if [ -f "$HOME/.bashrc" ]; then
+#    . "$HOME/.bashrc"
+#fi
+
+
+###### Standard User .bashrc #######
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias df='df -hT'
+alias h='history 25'
+alias j='jobs -l'
+alias vi='vim'
+
+alias portinfo='pkg info -qL'
+alias portquery='pkg info|grep '
+
+alias l='ls -lFG -h -D "%Y/%m/%d %H:%M:%S"'
+alias ll='ls -lAFG -h -D "%Y/%m/%d %H:%M:%S"'
+alias la='ls -laFG -h -D "%Y/%m/%d %H:%M:%S"'
+alias lc='ls -CFG'
+#alias l='ls -lGFh -D "%Y/%m/%d %H:%M:%S" | grep "^d" && ls -lGFh -D "%Y/%m/%d %H:%M:%S" | grep "^-" && ls -lGFh -D "%Y/%m/%d %H:%M:%S" | grep "^l"'
+alias lx='ls -lGFh -D "%Y/%m/%d %H:%M:%S" | grep "^d" && ls -lGFh -D "%Y/%m/%d %H:%M:%S" | grep "^-" && ls -lGFh -D "%Y/%m/%d %H:%M:%S" | grep "^l"'
+alias lxa='ls -lGAFh -D "%Y/%m/%d %H:%M:%S" | grep "^d" && ls -lGAFh -D "%Y/%m/%d %H:%M:%S" | grep "^-" && ls -lGAFh -D "%Y/%m/%d %H:%M:%S" | grep "^l"'
+export CLICOLOR_FORCE=YES
+
+bldred='\e[1;31m' # Red
+bldgrn='\e[1;32m' # Green
+bldylw='\e[1;33m' # Yellow
+bldblu='\e[1;34m' # Blue
+bldpur='\e[1;35m' # Purple
+bldcyn='\e[1;36m' # Cyan
+bldwht='\e[1;37m' # White
+txtrst='\e[0m'
+prompt='\$'
+
+# the prompt
+PS1="\[$bldylw\]\u\[$bldwht\]@\[$bldgrn\]\h \[$bldblu\]\w $prompt\[$txtrst\] "
+
+#Old FreeBSD prompt
+#PS1='\e[1;33m\]\u\e[1;37m\]@\e[1;32m\]\h \e[1;34m\]\w \$\e[0m\]'
+
+# user sud instead of sudo
+sud()
+{
+  su root -c "$*"
+}
