@@ -23,6 +23,7 @@ ex ()
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
       *.bz2)       bunzip2 $1   ;;
       *.rar)       unrar x $1     ;;
       *.gz)        gunzip $1    ;;
@@ -53,9 +54,9 @@ alias h='history 25'
 alias j='jobs -l'
 
 # vim stuff
-export EDITOR=vim
-export VISUAL=vim
-alias vi=vim
+export EDITOR=nvim
+export VISUAL=nvim
+alias vi=nvim
 
 
 # old prompt
@@ -99,7 +100,7 @@ PS1="\[$LightYellow\]\u\[$DarkWhite\]@\[$TextReset\]\[$LightGreen\]\h \[$LightBl
 
 GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_THEME=Single_line_Ubuntu #Single_line #Single_line_Solarized #
-source /data/arvind/gitprompts/bash-git-prompt/prompt-colors.sh  
+source /data/arvind/Scripts/bash-git-prompt/prompt-colors.sh  
 case $GIT_PROMPT_THEME in
    "Single_line") GIT_PROMPT_START_USER="_LAST_COMMAND_INDICATOR_ ${White}${ResetColor} ${LightYellow}${PathShort}${ResetColor}";;
    "Single_line_Ubuntu") GIT_PROMPT_START_USER="_LAST_COMMAND_INDICATOR_ ${White}${ResetColor}${Cyan}${PathShort}${ResetColor}";;
@@ -119,6 +120,7 @@ list()
 {
     echo "home - changes dir to /data/arvind"
     echo "gitprompt - initializes the git prompt for the current terminal session"
+    echo "ibus-start  ... will start the ibus input control"
 }
 
 # use sud instead of sudo
@@ -132,9 +134,14 @@ home()
   cd /data/arvind
 }
 
+ibus-start()
+{
+  /usr/bin/ibus-daemon -drx
+}
+
 gitprompt()
 {
-  source /data/arvind/gitprompts/bash-git-prompt/gitprompt.sh
+  source /data/arvind/Scripts/bash-git-prompt/gitprompt.sh
 }
 
 bashpowerline()
@@ -148,3 +155,25 @@ powerline()
     source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh; 
   fi
 }
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+ 
+# # set PATH so it includes user's private bin if it exists
+# if [ -d "$HOME/bin" ] ; then
+#     PATH="$HOME/bin:$HOME/bin/peazip:$PATH"
+# fi
+# 
+# # set PATH so it includes user's private bin if it exists
+# if [ -d "$HOME/.local/bin" ] ; then
+#     PATH="$HOME/.local/bin:$PATH"
+# fi
+
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+# ibus-daemon -drx
+
