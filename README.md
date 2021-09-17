@@ -1,1 +1,1 @@
-# learnGit
+# Learn Git Commits
