@@ -1,3 +1,3 @@
 # Learn Git Commits
 
-New-1
+N-1
