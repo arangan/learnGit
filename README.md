@@ -1,7 +1,5 @@
 # Learn Git Commits
 
-# Learn Git Commits
-
 # Git global setup
 
  
