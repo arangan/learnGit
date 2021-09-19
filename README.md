@@ -56,3 +56,7 @@ git push -u origin --all
 
 git push -u origin --tags
 
+git config --local --unset remote.old-origin.url
+
+git config --local --unset remote.old-origin.fetch
+
