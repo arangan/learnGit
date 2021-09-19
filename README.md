@@ -4,7 +4,7 @@
 
  
 
-git config --local user.name "Arvind"
+git config --local user.name "Arvind Rangan"
 
 git config --local user.email "3113987+arangan@users.noreply.github.com"
 
