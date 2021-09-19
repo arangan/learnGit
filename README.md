@@ -2,7 +2,6 @@
 
 # Git global setup
 
- 
 
 git config --local user.name "Arvind Rangan"
 
