@@ -47,8 +47,19 @@ CreateLink "bin"
 #CreateLink "logs"
 #CreateLink "samples"
 
+#Games -> /data/arvind/games/
+#.nuget -> /data/arvind/.nuget/
+#.steam/
+#.thunderbird -> /data/arvind/Scripts/data/thunderbird/
+#.gitconfig -> /data/arvind/Scripts/gitconfig*
+#.steampath -> /home/arvind/.steam/sdk32/steam
+#.steampid -> /home/arvind/.steam/steam.pid
+
 echo Finished Linking Directories
 
 #echo "Setting .bash* files"
 #CreateLink ".bash_profile"
 #CreateLink ".bashrc"
+
+
+#$home/.config $ doublecmd -> /data/arvind/Scripts/data/doublecmd/

@@ -100,7 +100,7 @@ prompt='\$'
 PS1="\[$LightYellow\]\u\[$DarkWhite\]@\[$TextReset\]\[$LightGreen\]\h \[$LightBlue\]\w $prompt\[$TextReset\] "
 
 GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_THEME=Single_line_Ubuntu #Single_line #Single_line_Solarized #
+GIT_PROMPT_THEME=Single_line_Ubuntu #Single_line # Single_line_Solarized #
 source /data/arvind/Scripts/bash-git-prompt/prompt-colors.sh  
 case $GIT_PROMPT_THEME in
    "Single_line") GIT_PROMPT_START_USER="_LAST_COMMAND_INDICATOR_ ${White}${ResetColor} ${LightYellow}${PathShort}${ResetColor}";;
